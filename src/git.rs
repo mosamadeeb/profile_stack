@@ -2,6 +2,8 @@ use std::process::{Command, Stdio};
 
 use anyhow::{Context, Result};
 
+use tracing::{info, warn};
+
 use crate::conf::Env;
 
 const BINARY: &str = "git";
@@ -47,7 +49,9 @@ pub fn repo_owner() -> Result<String> {
         .stdout(Stdio::piped())
         .output()
         .context("Failed to get remote URL")?;
-    Ok(String::from_utf8(remote.stdout)?
+    let res = String::from_utf8(remote.stdout).unwrap();
+    warn!("{}", res);
+    Ok(res
         .split("/")
         .collect::<Vec<&str>>()
         .get(3)
