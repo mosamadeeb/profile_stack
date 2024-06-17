@@ -1,4 +1,4 @@
-FROM ghcr.io/gleich/profile_stack:platform
+FROM ghcr.io/mosamadeeb/profile_stack:platform
 
 ENV RUST_LOG info
 ENV RUST_BACKTRACE 1
