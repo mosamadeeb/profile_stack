@@ -17,7 +17,7 @@ pub fn gen_table(
     ));
     lines.push(String::from("| - | - |"));
 
-    const FRAGMENT: &AsciiSet = &CONTROLS.add(b' ').add(b'"').add(b'<').add(b'>').add(b'`');
+    const FRAGMENT: &AsciiSet = &CONTROLS.add(b' ').add(b'"').add(b'#').add(b'+').add(b'<').add(b'>').add(b'`');
 
     for tech in file_conf.iter() {
         let mut projects = Vec::new();
