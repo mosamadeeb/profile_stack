@@ -24,6 +24,6 @@ jobs:
               - '.github/workflows/**'
       - if: steps.changes.outputs.code == 'true'
         run: |
-          echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u gleich --password-stdin
-          docker build -f docker/platform.Dockerfile -t ghcr.io/gleich/profile_stack:platform .
-          docker push ghcr.io/gleich/profile_stack:platform
+          echo ${{ secrets.GITHUB_TOKEN }} | docker login ghcr.io -u mosamadeeb --password-stdin
+          docker build -f docker/platform.Dockerfile -t ghcr.io/mosamadeeb/profile_stack:platform .
+          docker push ghcr.io/mosamadeeb/profile_stack:platform
